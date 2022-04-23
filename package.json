@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "node ./bin/www.js",
-    "dev": "nodemon -r dotenv/config ./db/index.js"
+    "dev": "nodemon -r dotenv/config ./db/index.js",
+    "dbcreatetable": "node ./db/scripts/createTable.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
