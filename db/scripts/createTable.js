@@ -15,7 +15,7 @@ it and postgres can take that and turn it into SQL to create a table
 Also will be async function for creating table as talking 
 to database server and can take a bit of time */
 
-import query from "../index";
+import query from "../index.js";
 
 const sqlString =
   "CREATE TABLE IF NOT EXISTS todo (id SERIAL PRIMARY KEY, item TEXT)";
