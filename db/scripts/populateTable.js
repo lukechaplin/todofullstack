@@ -1,6 +1,6 @@
 import query from "../index.js";
 
-async function insertTaskIntoTodo() {
+export default async function insertTaskIntoTodo() {
   const res = await query(
     "INSERT INTO todo (id, item) VALUES ($1, $2) RETURNING *",
     [item]
