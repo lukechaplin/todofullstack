@@ -17,8 +17,7 @@ to database server and can take a bit of time */
 
 import query from "../index.js";
 
-const sqlString =
-  "CREATE TABLE IF NOT EXISTS todo (id SERIAL PRIMARY KEY, item TEXT)";
+const sqlString = `CREATE TABLE IF NOT EXISTS todo (id SERIAL PRIMARY KEY, item TEXT)`;
 
 async function createToDo() {
   const res = await query(sqlString);
