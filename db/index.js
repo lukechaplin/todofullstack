@@ -2,7 +2,7 @@ import pg from "pg";
 
 import { db } from "../config.js";
 
-console.log(db.testing);
+console.log(db);
 
 const pool = new pg.Pool({
   user: db.user,
