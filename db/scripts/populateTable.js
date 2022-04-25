@@ -6,3 +6,5 @@ export default async function insertTaskIntoTodo() {
   ]);
   console.log(res);
 }
+
+insertTaskIntoTodo();
