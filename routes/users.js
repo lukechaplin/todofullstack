@@ -1,23 +1,28 @@
 import express from "express";
 import { getAllTaskItems } from "../db/scripts/getAllTaskItems.js";
-import {insertTaskIntoTodo} from "../db/scripts/populateTable.js"
+//import { insertTaskIntoToDo } from "../db/scripts/populateTable.js";
 const router = express.Router();
-const app = express()
-const port = 3000
+const app = express();
 
 /* GET all to do list items. */
-app.get("/", function (req, res) {
-  await getAllTaskItems()
-  res.json({ success: true, message: `list items retrieved`, payload: getAllTaskItems() });
+app.get("/", async function (req, res) {
+  await getAllTaskItems();
+  res.json({
+    success: true,
+    message: `list items retrieved`,
+    payload: getAllTaskItems(),
+  });
 });
 
 /*POST a to do list item to the database */
-app.post('/createtodoitem', (req, res) => {
-  const newItem = req.body;
-  await insertTaskIntoTodo(newItem)
-  res.json({success: true, message: `item added`, payload: newItem});
-})
-
-app.listen(port, () => {console.log(`app running on port ${port}`)})
+app.post("/createtodoitem", async function (req, res) {
+  const body = req.body;
+  await insertTaskIntoToDo(body);
+  res.json({
+    success: true,
+    message: `item added`,
+    payload: insertTaskIntoToDo(body),
+  });
+});
 
 export default router;

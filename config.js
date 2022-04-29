@@ -1,7 +1,7 @@
+/*connection string is new way in postgres heroku to 
+pass through env vairables 
+do not need rest of them */
+
 export const db = {
-  user: process.env.PGUSER,
-  host: process.env.PGHOST,
-  database: process.env.PGDATABASE,
-  password: process.env.PGPASSWORD,
-  port: process.env.PGPORT,
+  connectionString: process.env.URL,
 };
