@@ -5,7 +5,7 @@ const router = express.Router();
 const app = express();
 
 /* GET all to do list items. */
-app.get("/", async function (req, res) {
+app.get("/", async function (res) {
   await getAllTaskItems();
   res.json({
     success: true,
