@@ -21,7 +21,7 @@ router.get("/view", async function (req, res) {
   return res.json({
     success: true,
     message: `list items retrieved`,
-    payload: getAllTaskItems(),
+    payload: getAllTaskItems(res),
   });
 });
 
