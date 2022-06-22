@@ -5,5 +5,3 @@ export default async function deleteTaskfromTodo() {
   const res = await query(`DELETE FROM todo WHERE id = $1`, [id]);
   console.log(res);
 }
-
-deleteTaskfromTodo();
