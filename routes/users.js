@@ -1,6 +1,6 @@
 import express from "express";
-import { getAllTaskItems } from "../db/scripts/getAllTaskItems.js";
-import { insertTaskIntoToDo } from "../db/scripts/populateTable.js";
+import { getAllTaskItems } from "../db/models/getAllTaskItems.js";
+import { insertTaskIntoToDo } from "../db/models/populateTable.js";
 
 /*Router part of express package and means setting up 
 different URL pathways
