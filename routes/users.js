@@ -32,7 +32,7 @@ router.post("/createtodoitem", async function (req, res) {
   return res.json({
     success: true,
     message: `item added`,
-    payload: insertTaskIntoToDo(item),
+    payload: item,
   });
 });
 
