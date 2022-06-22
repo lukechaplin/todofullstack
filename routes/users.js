@@ -14,7 +14,8 @@ const router = express.Router();
 /* GET all to do list items. */
 /* make sure always have req, res in the async function smooth brackers 
 and always have req first otherwise res.json will not be recognised 
-- got to send request for json first so is recognised */
+- got to send request for json first so is recognised otherwise will get 
+error message saying res.json not a function */
 router.get("/view", async function (req, res) {
   await getAllTaskItems();
   return res.json({
