@@ -1,6 +1,7 @@
 import express from "express";
 import { getAllTaskItems } from "../db/models/getAllTaskItems.js";
 import { insertTaskIntoToDo } from "../db/models/populateTable.js";
+import { deleteTaskfromTodo } from "../db/models/deleteItem.js";
 
 /*Router part of express package and means setting up 
 different URL pathways
@@ -33,6 +34,18 @@ router.post("/createtodoitem", async function (req, res) {
     success: true,
     message: `item added`,
     payload: item,
+  });
+});
+
+/*Delete a list item from the database */
+
+router.post("/deletetodoitem/:id", async function (req, res) {
+  const id = req.params;
+  await deleteTaskfromTodo(id);
+  return res.json({
+    success: true,
+    message: `item deleted`,
+    payload: id,
   });
 });
 
