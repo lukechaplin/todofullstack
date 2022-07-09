@@ -39,8 +39,8 @@ router.post("/createtodoitem", async function (req, res) {
 
 /*Delete a list item from the database */
 
-router.post("/deletetodoitem/:id", async function (req, res) {
-  const id = req.params;
+router.delete("/deletetodoitem/:id", async function (req, res) {
+  let id = req.params.id;
   await deleteTaskfromTodo(id);
   return res.json({
     success: true,
