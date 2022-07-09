@@ -18,11 +18,11 @@ and always have req first otherwise res.json will not be recognised
 - got to send request for json first so is recognised otherwise will get 
 error message saying res.json not a function */
 router.get("/view", async function (req, res) {
-  await getAllTaskItems();
+  let data = await getAllTaskItems();
   res.json({
     success: true,
     message: `list items retrieved`,
-    payload: getAllTaskItems(),
+    payload: data,
   });
 });
 
